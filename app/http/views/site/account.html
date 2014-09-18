@@ -7,7 +7,6 @@
   <title>Webmaker</title>
   <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://stuff.webmaker.org/makerstrap/latest/makerstrap.complete.min.css">
   <link rel="stylesheet" href="/css/account.{{ localeInfo.direction }}.css">
 </head>
 <body>
@@ -58,9 +57,13 @@
                 <ul class="wm-security-pref-list no-list-styling">
                   <li class="security-message"><i class="fa fa-lock"></i> You are currently using one-time passwords</li>
                   <li><a href="#">Set a permanent password instead</a></li>
-                  <li><input type="password" class="form-control" placeholder="Set Password"/></li>
-                  <li><input type="password" class="form-control" placeholder="Confirm Password"/></li>
-                  <li><button class="btn btn-primary">Set Password</button></li>
+                  <!-- Show/hide this ul to display password fields and submit -->
+                  <ul class="no-list-styling">
+                    <li><input type="password" class="form-control" placeholder="Set Password"/></li>
+                    <li><input type="password" class="form-control" placeholder="Confirm Password"/></li>
+                    <li><button class="btn btn-primary">Set Password</button></li>
+                  </ul>
+                  <!--  -->
                 </ul>
               </li>
 
