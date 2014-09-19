@@ -59,7 +59,7 @@
                   <li class="subtext">When you sign in, we will send you an email token to verify your identity, no password needed!</li>
                   <li><a class="set-password" href="#">Set a permanent password instead</a></li>
                   <!-- Show/hide this ul to display password fields and submit -->
-                  <ul class="no-list-styling">
+                  <ul style="display: none" class="no-list-styling">
                     <li><input type="password" class="form-control" placeholder="Enter Password"/></li>
                     <li><input type="password" class="form-control" placeholder="Confirm Password"/></li>
                     <li><button class="btn btn-primary">Set Password</button></li>
@@ -84,13 +84,16 @@
                     </li>
                   </ul>
               </li>
-              <li><span class="field-label">{{ gettext("Language") }}</span><span class="wm-lang"></span>
-                <select name="languagePref" id="languagePref" data-supported="{{languages}}">
+              <li><span class="field-label">{{ gettext("Language") }}</span>
+                <span class="wm-lang">
+                  <select name="languagePref" id="languagePref" data-supported="{{languages}}">
                   {% for locale in languages %}<option value="{{ locale }}"{%
                   if locale == localeInfo.lang %} selected="selected"{% endif
                   %}>{{ languageEnglishName(locale) }} - {{ languageNameFor(locale) }}</option>{% endfor %}
                  </select>
+                </span>
               </li>
+              <li><span class="field-label">Account</span><span class="wm-delete"><a id="delete-account">{{ gettext('Delete account') }}</a></span></li>
               <li>
                 <span class="field-label"></span>
                 <span class="email-prefs prefs-saved">{{ gettext("Your preferences have been saved") }}</span>
@@ -98,7 +101,6 @@
               </li>
             </ul>
 
-            <p><a id="delete-account">{{ gettext('Delete account?') }}</a></p>
           </div>
         </div>
       </div>
